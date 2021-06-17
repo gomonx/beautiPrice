@@ -9,6 +9,7 @@ BeautiPrice [Beautiful Price]
 
 Function xPrice() : เติม 'x' เข้าไปในราคา
 19,999 >> 19xxx
-<br>ตัวอย่างการใช้ : $newPrice = xPrice($price,$cutoff=2)
+
+ตัวอย่างการใช้ : $newPrice = xPrice($price,$cutoff=2)
 + $price - ราคาปรกติ
 + $cutoff - หลักที่คงไว้ไม่เปลี่ยนแปลงs
