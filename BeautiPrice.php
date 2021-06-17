@@ -50,8 +50,23 @@ if (! function_exists('beautiPrice2')){
 if (! function_exists('xPrice')){
     function xPrice($price,$cutOff=null){
         if(!isset($cutOff) || empty($cutOff) || $cutOff < 1){ $cutOff = 2;}
-        $digi = substr($price,0,$cutOff);
-        return _addBehind($digi,'x',strlen($price) - $cutOff);
+        $newNumber='';
+        $j= 0;
+
+        for($i=strlen($price)-1;$i>=0;$i--){
+            if(is_numeric(substr($price,$i,1))){
+                if($i >=$cutOff){
+                    $newNumber = 'x' . $newNumber;
+                }else{
+                    $newNumber = substr($price,$i,1) . $newNumber;
+                }  
+            }
+            if(($j+1) % 3 == 0){
+                $newNumber = ',' . $newNumber;
+            }
+            $j++;
+        }
+        return $newNumber;
     }
 }
 
